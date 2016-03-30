@@ -1,4 +1,4 @@
-FROM hellosworldos/docker-webserver
+FROM hellosworldos/webserver
 MAINTAINER Widgento
 
 ADD /etc/nginx/magento_rewrites.conf /etc/nginx/magento_rewrites.conf

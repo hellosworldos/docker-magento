@@ -28,17 +28,17 @@ while [ -z "$DBEXISTS" ]; do
     sleep 1
 done
 
-echo "Check quickmage database exists"
+echo "Check magento database exists"
 RESULT=`mysql -h$DB_PORT_3306_TCP_ADDR --port=$DB_PORT_3306_TCP_PORT -u$DB_ENV_MYSQL_USER -p$DB_ENV_MYSQL_PASS -e "SHOW DATABASES LIKE '$DB_ENV_MYSQL_DBNAME'"`
 
 if [ -z "$RESULT" ]; then
     if [ -f /var/www/magento/shared/sql/magento.sql.gz ]; then
-        echo "Create new quickmage database"
+        echo "Create new magento database"
         mysql -h$DB_PORT_3306_TCP_ADDR --port=$DB_PORT_3306_TCP_PORT -u$DB_ENV_MYSQL_USER -p$DB_ENV_MYSQL_PASS -e "CREATE DATABASE $DB_ENV_MYSQL_DBNAME;"
 
         gunzip -kf /var/www/magento/shared/sql/magento.sql.gz
 
-        echo "Apply magento.sql dump to quickmage"
+        echo "Apply magento.sql dump to magento"
         mysql -h$DB_PORT_3306_TCP_ADDR --port=$DB_PORT_3306_TCP_PORT -u$DB_ENV_MYSQL_USER -p$DB_ENV_MYSQL_PASS $DB_ENV_MYSQL_DBNAME < /var/www/magento/shared/sql/magento.sql
 
         rm -rf /var/www/magento/shared/sql/magento.sql
