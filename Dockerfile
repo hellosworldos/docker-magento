@@ -4,6 +4,7 @@ MAINTAINER Widgento
 ADD /etc/nginx/magento_rewrites.conf /etc/nginx/magento_rewrites.conf
 ADD /etc/nginx/magento_security.conf /etc/nginx/magento_security.conf
 ADD /etc/nginx/conf.d/magento.conf /etc/nginx/conf.d/magento.conf
+ADD /etc/php5/fpm/conf.d/20-production.ini /etc/php5/fpm/conf.d/20-production.ini
 ADD /magento.sh /tmp/magento.sh
 ADD /cron.sh /tmp/cron.sh
 ADD /init.sh /tmp/init.sh
@@ -16,6 +17,7 @@ RUN chmod +x /tmp/magento.sh \
     && useradd -G dev magento \
     && usermod -a -G dev www-data \
     && mkdir -p /var/www/magento/shared/var \
+    && mkdir -p /var/www/magento/shared/log \
     && chmod 0777 -R /var/www/magento/shared/var \
     && mkdir -p /var/www/magento/shared/media
 
