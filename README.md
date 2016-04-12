@@ -9,5 +9,5 @@ Docker image to run Magento1 CE web server and it's cron
 
 ## Volumes
 
-* /var/www/magento/repo_volume - Magento root dir
+* `/var/www/magento/repo_volume` - Magento root dir
 
