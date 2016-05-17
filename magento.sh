@@ -88,7 +88,7 @@ sed -i "s/{{cache_port}}/$CACHE_PORT_11211_TCP_PORT/g" ./local.xml.live.tmp
 sed -i "s/{{date}}/$MAGENTO_KEY/g" ./local.xml.live.tmp
 sed -i "s/{{key}}/$MAGENTO_KEY/g" ./local.xml.live.tmp
 sed -i "s/{{db_prefix}}/$DB_PREFIX/g" ./local.xml.live.tmp
-sed -i "s/{{db_init_statements}}/$DB_INIT_STATEMENTS/g" ./local.xml.live.tmp
+sed -i "s/{{db_init_statemants}}/$DB_INIT_STATEMENTS/g" ./local.xml.live.tmp
 sed -i "s/{{db_model}}/$DB_MODEL/g" ./local.xml.live.tmp
 sed -i "s/{{db_type}}/$DB_TYPE/g" ./local.xml.live.tmp
 sed -i "s/{{db_pdo_type}}/$DB_PDO_TYPE/g" ./local.xml.live.tmp
