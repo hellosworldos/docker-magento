@@ -19,7 +19,10 @@ RUN chmod +x /tmp/magento.sh \
     && mkdir -p /var/www/magento/shared/var \
     && mkdir -p /var/www/magento/shared/log \
     && chmod 0777 -R /var/www/magento/shared/var \
-    && mkdir -p /var/www/magento/shared/media
+    && mkdir -p /var/www/magento/shared/media \
+    && cd /usr/local/bin \
+    && wget -nc https://raw.githubusercontent.com/netz98/n98-magerun/master/n98-magerun.phar \
+    && chmod +x ./n98-magerun.phar
 
 VOLUME ["/var/www/magento/repo_volume"]
 VOLUME ["/var/www/magento/shared/var", "/var/www/magento/shared/media"]
