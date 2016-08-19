@@ -3,6 +3,7 @@ MAINTAINER Widgento
 
 ADD /etc/nginx/magento_rewrites.conf /etc/nginx/magento_rewrites.conf
 ADD /etc/nginx/magento_security.conf /etc/nginx/magento_security.conf
+ADD /etc/nginx/fastcgi_params_magento.conf /etc/nginx/fastcgi_params_magento.conf
 ADD /etc/nginx/conf.d/magento.conf /etc/nginx/conf.d/magento.conf
 ADD /etc/php5/fpm/conf.d/20-production.ini /etc/php5/fpm/conf.d/20-production.ini
 ADD /magento.sh /tmp/magento.sh
