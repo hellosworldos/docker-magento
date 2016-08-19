@@ -1,4 +1,4 @@
-FROM hellosworldos/webserver
+FROM hellosworldos/webserver:wheezy
 MAINTAINER Widgento
 
 ADD /etc/nginx/magento_rewrites.conf /etc/nginx/magento_rewrites.conf
